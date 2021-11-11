@@ -29,14 +29,13 @@ export function TaskList() {
   }
 
   function handleToggleTaskCompletion(id: number) {
+    
     const taskCkecked = tasks.filter(task => task.id === id).reduce((cur) => cur)
     taskCkecked.isComplete = !taskCkecked.isComplete;
     setTasks([...tasks]);
   }
 
-
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID ok
     setTasks(tasks.filter(task => task.id !== id))
   }
 
